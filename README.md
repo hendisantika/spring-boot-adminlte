@@ -1,23 +1,23 @@
 # SpringBoot with AdminLTE 2
 ---
 
-Aplicação com SpringBoot e o template AdminLTE 2 para facilitar o desenvolvimento.
+Application with SpringBoot and the AdminLTE 2 template to facilitate development.
 
 
-Características
+characteristics
 ---
 
 * Spring Boot;
-* Spring Security para login básico com permissões;
+* Spring Security for basic login with permissions;
 * Thymeleaf para view;
-* Banco Mysql ou outros;
-* Crud básico de clientes;
+* Mysql Bank or others;
+* Basic customer crud;
 
 TODO
 ---
 
-* Busca na listagem;
-* Modelo de Dialog;
-* Modelo de envio de e-mail com template;
+* Search in the listing;
+* Model of Dialog;
+* Template for sending e-mail with template;
 
-Fica livre disposição para realizar alterações e implementações e tornar o código mais evoluído.
+It is free to make changes and implementations and make the code more evolved.
