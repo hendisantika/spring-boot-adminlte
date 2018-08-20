@@ -62,7 +62,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         if(!userDetailsService.userExists("bruno")) {
             List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
             authorities.add(new SimpleGrantedAuthority("USER"));
-            User userDetails = new User("bruno", encoder.encode("1234"), authorities);
+            User userDetails = new User("naruto", encoder.encode("1234"), authorities);
             userDetailsService.createUser(userDetails);
         }
     }
