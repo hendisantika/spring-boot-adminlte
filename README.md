@@ -21,3 +21,9 @@ TODO
 * Template for sending e-mail with template;
 
 It is free to make changes and implementations and make the code more evolved.
+
+| #   | Username | Password |
+| --- |:--------:| --------:|
+| 1   | bruno    | 1234     |
+| 2   | naruto   | 1234     |
+
