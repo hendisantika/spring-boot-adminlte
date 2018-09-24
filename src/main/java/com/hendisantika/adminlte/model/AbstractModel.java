@@ -1,6 +1,9 @@
 package com.hendisantika.adminlte.model;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 @MappedSuperclass
@@ -9,7 +12,7 @@ public abstract class AbstractModel<Long extends Serializable> implements Serial
     private static final long serialVersionUID = -6323358535657100144L;
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     public Long getId() {
@@ -38,11 +41,8 @@ public abstract class AbstractModel<Long extends Serializable> implements Serial
             return false;
         AbstractModel<?> other = (AbstractModel<?>) obj;
         if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        return true;
+            return other.id == null;
+        } else return id.equals(other.id);
     }
 
 }
