@@ -11,3 +11,12 @@ CREATE TABLE authorities (
   UNIQUE INDEX authorities_idx_1 (username, authority)
 )
   ENGINE = InnoDb;
+
+CREATE TABLE customers (
+  id         BIGINT(50)   NOT NULL PRIMARY KEY,
+  firstname  VARCHAR(50)  NOT NULL,
+  lastname   VARCHAR(255) NOT NULL,
+  email      VARCHAR(255) NOT NULL UNIQUE,
+  added_date TIMESTAMP    NOT NULL
+)
+  ENGINE = InnoDb;
