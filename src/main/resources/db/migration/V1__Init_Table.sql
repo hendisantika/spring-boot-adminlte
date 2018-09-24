@@ -13,10 +13,10 @@ CREATE TABLE authorities (
   ENGINE = InnoDb;
 
 CREATE TABLE customers (
-  id         BIGINT(50)   NOT NULL PRIMARY KEY,
-  firstname  VARCHAR(50)  NOT NULL,
-  lastname   VARCHAR(255) NOT NULL,
-  email      VARCHAR(255) NOT NULL UNIQUE,
-  added_date TIMESTAMP    NOT NULL
+  id         BIGINT(50)                          NOT NULL PRIMARY KEY,
+  firstname  VARCHAR(50)                         NOT NULL,
+  lastname   VARCHAR(255)                        NOT NULL,
+  email      VARCHAR(255)                        NOT NULL UNIQUE,
+  added_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
 )
   ENGINE = InnoDb;

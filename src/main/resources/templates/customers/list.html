@@ -1,20 +1,21 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sd="http://www.thymeleaf.org/spring-data" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
 <head>
-    <title>Clientes</title>
+    <title>Clients</title>
 </head>
 <body>
 <section layout:fragment="header">
-<h1>Clientes</h1>
+    <h1>Clients</h1>
 <ol class="breadcrumb">
     <li><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li class="active">Clientes</li>
+    <li class="active">Clients</li>
 </ol>
 </section>
 <div layout:fragment="content">
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">Listagem</h3>
+            <h3 class="box-title">Lists</h3>
             <div class="box-tools pull-right">
                 <a href="/customers/add" type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></a>
                 <br clear="all" />
@@ -26,8 +27,8 @@
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Email</th>
-                    <th>Data de Cadastro</th>
-                    <th>Ações</th>
+                    <th>Registration Date</th>
+                    <th>Action</th>
                 </tr>
                 <tr th:each="row : ${list}">
                     <td th:text="${row.id}"></td>
@@ -35,8 +36,8 @@
                     <td th:text="${row.email}"></td>
                     <td th:text="${#dates.format(row.addedDate, 'dd/MM/yyyy')}"></td>
                     <td>
-                        <a th:href="${'/customers/edit/' + row.id}">editar</a> -
-                        <a th:href="${'/customers/delete/' + row.id}">excluir</a>
+                        <a th:href="${'/customers/edit/' + row.id}">edit</a> -
+                        <a th:href="${'/customers/delete/' + row.id}">delete</a>
                     </td>
                 </tr>
             </table>
