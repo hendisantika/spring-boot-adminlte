@@ -23,7 +23,7 @@ public class Customers extends AbstractModel<Long> {
 
     @Column(nullable = false, unique = true)
     private String email;
-
+    
     @Column(name = "added_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable = false, updatable = false)
     private Date addedDate;
 
