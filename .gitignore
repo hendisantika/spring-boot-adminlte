@@ -74,3 +74,5 @@ hs_err_pid*
 .mvn/
 Sistema.iml
 target/
+/.classpath
+/.project
