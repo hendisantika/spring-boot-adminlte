@@ -1,0 +1,59 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>Clients</title>
+</head>
+<body>
+<section layout:fragment="header">
+    <h1>Clients</h1>
+<ol class="breadcrumb">
+    <li><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Clients</li>
+</ol>
+</section>
+<div layout:fragment="content">
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Role Lists</h3>
+            <div class="box-tools pull-right">
+                <a href="/roles/add" type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></a>
+                <br clear="all" />
+            </div>
+        </div>
+        <div class="box-body no-padding">
+            <table class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Role Name</th>
+                    <th>Name Prefix</th>
+                    <th>Description</th>
+                    <th>Task Access Functionalities</th>
+                    <th>Action</th>
+                </tr>
+                <tr th:each="row : ${list}">
+                    <td th:text="${row.id}"></td>
+                    <td th:text="${row.roleName}"></td>
+                    <td th:text="${row.namePrefix}"></td>
+                    <td th:text="${row.description}"></td>
+                    <td th:text="${row.taskAccessFunctionalities}"></td>
+                    <td>
+                        <a th:href="${'/roles/edit/' + row.id}">edit</a> -
+                        <a th:href="${'/roles/delete/' + row.id}">delete</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="box-footer clearfix">
+            <ul class="pagination pagination-sm no-margin pull-right">
+                <li><a href="/roles/1">Back</a></li>
+                <li th:each="p : ${#numbers.sequence(1, endIndex/beginIndex)}" th:class="${p == currentIndex} ? 'active' : ''">
+                    <a th:href="${'/roles/' + p}" th:text="${p}"></a>
+                </li>
+                <li><a th:href="${'/roles/' + endIndex}">Forwad</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

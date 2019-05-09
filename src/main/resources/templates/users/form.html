@@ -16,20 +16,24 @@
         <div class="box-header with-border">
             <h3 class="box-title">Formulário</h3>
             <div class="box-tools pull-right">
-                <a href="/customers" type="button" class="btn btn-box-tool"><i class="fa fa-list-ul"></i></a>
+                <a href="/users" type="button" class="btn btn-box-tool"><i class="fa fa-list-ul"></i></a>
             </div>
         </div>
-        <form data-toggle="validator" role="form" th:object="${customer}" th:action="@{/customers/save}" method="post">
+        <form data-toggle="validator" role="form" th:object="${user}" th:action="@{/users/save}" method="post">
             <div class="box-body">
                 <input type="hidden" th:field="*{id}"/>
 
                 <div class="form-group">
-                    <label for="Firstname">First Name</label>
-                    <input type="text" required="true" class="form-control" th:field="*{firstname}" id="firstname" />
+                    <label for="Username">User Name</label>
+                    <input type="text" required="true" class="form-control" th:field="*{username}" id="username" />
                 </div>
                 <div class="form-group">
-                    <label for="Lastname">Last Name</label>
-                    <input type="text" required="true" class="form-control" th:field="*{lastname}" id="lastname" />
+                    <label for="Password">Password</label>
+                    <input type="password" required="true" class="form-control" th:field="*{password}" id="password" />
+                </div>
+                 <div class="form-group">
+                    <label for="PhoneNumber">Phone Number</label>
+                    <input type="text" required="true" class="form-control" th:field="*{phoneNumber}" id="password" />
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail</label>
