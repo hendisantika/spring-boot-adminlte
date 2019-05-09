@@ -10,9 +10,10 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Version;
 
 @Embeddable
-public class AbstractTimestampEntity implements Serializable {
+public class AbstractTimeStamp implements Serializable {
 
 	private static final long serialVersionUID = 5085156002610334435L;
 
@@ -25,7 +26,7 @@ public class AbstractTimestampEntity implements Serializable {
     private Date updated = new Date();
     
 	private long createdUser;
-    private long updatedUser;
+    private long updatedUser;  
 
     @PrePersist
     protected void onCreate() {
@@ -88,7 +89,7 @@ public class AbstractTimestampEntity implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		AbstractTimestampEntity other = (AbstractTimestampEntity) obj;
+		AbstractTimeStamp other = (AbstractTimeStamp) obj;
 		if (created == null) {
 			if (other.created != null)
 				return false;

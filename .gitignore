@@ -74,6 +74,10 @@ hs_err_pid*
 .mvn/
 Sistema.iml
 target/
+<<<<<<< HEAD
+/.classpath
+/.project
+=======
 .classpath
 .factorypath
 .project
@@ -82,3 +86,4 @@ target/
 .settings/org.eclipse.jdt.core.prefs
 .settings/org.eclipse.m2e.core.prefs
 .settings/org.hibernate.eclipse.console.prefs
+>>>>>>> branch 'master' of https://github.com/championboylay/spring-boot-adminlte.git

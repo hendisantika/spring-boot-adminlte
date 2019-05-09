@@ -27,21 +27,6 @@ public class Customers extends AbstractModel<Long> {
     @Column(name = "added_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable = false, updatable = false)
     private Date addedDate;
 
-    
-    
-	public Customers() {
-		super();
-	}
-
-	
-	public Customers(String firstname, String lastname, String email, Date addedDate) {
-		super();
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.email = email;
-		this.addedDate = addedDate;
-	}
-
 
 	public String getFirstname() {
 		return firstname;
