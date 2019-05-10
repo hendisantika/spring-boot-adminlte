@@ -7,9 +7,11 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -37,10 +39,17 @@ public class EventOutlet implements Serializable{
 	private long id;
 	
 	@ManyToOne
+	@JoinColumn(name="outlet_id")
 	private OutletSetUp outlet = new OutletSetUp();
 	
-	@OneToMany
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="event_outlet")
 	private List<EventMember> memberList = new ArrayList<EventMember> ();
+	
+	
+	@ManyToOne
+	@JoinColumn(name="event_id")
+	private Event event;
+	
 	
 	@Embedded
 	private AbstractTimeStamp timeStamp = new AbstractTimeStamp();

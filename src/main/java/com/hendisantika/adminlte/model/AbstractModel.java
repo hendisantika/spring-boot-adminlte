@@ -1,6 +1,7 @@
 package com.hendisantika.adminlte.model;
 
-import javax.persistence.Entity;
+import java.io.Serializable;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,8 +13,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.io.Serializable;
 
 @MappedSuperclass
 @Data
