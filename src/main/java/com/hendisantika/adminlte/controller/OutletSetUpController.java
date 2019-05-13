@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hendisantika.adminlte.model.OutletSetUp;
 import com.hendisantika.adminlte.service.OutletSetUpService;
@@ -51,11 +52,40 @@ public class OutletSetUpController {
     }
     
     
-    @RequestMapping(value = "/hha/delete/{id}", method = RequestMethod.GET)
-    public String delete(@PathVariable Long id,Model model) {
+    @RequestMapping(value = "/outletsetup/delete/{id}", method = RequestMethod.GET)
+    public String deleteOutlet(@PathVariable Long id,Model model) {
        outletSetupService.deleteOutlet(id);
        return "redirect:/outlets/1";
  
+    }
+    
+    @RequestMapping(value="/outletsetup/edit/{id}",method=RequestMethod.GET)
+    public String editOutlet(@PathVariable Long id,Model model){
+    	
+    	System.out.println("id : "+id);
+  
+    	if(id==0){
+    		OutletSetUp outletsetup=new OutletSetUp();
+    		model.addAttribute("outletsetup",outletsetup);
+    		System.out.println("id >>> "+id);
+    		
+    	}
+    	else{
+        	model.addAttribute("outletsetup",outletSetupService.get(id));
+    	}
+
+    	return "customers/form";
+		//return "login";
+    }
+    
+    @RequestMapping(value="/outletsetup/save",method=RequestMethod.POST)
+    public String saveOutlet(OutletSetUp outletSetUp,final RedirectAttributes ra){
+    	
+    	
+    	OutletSetUp save=outletSetupService.save(outletSetUp);
+    	ra.addFlashAttribute("successFlash", "Cliente foi salvo com sucesso.");
+    	return "redirect:/outlet";
+    	
     }
 	
 	

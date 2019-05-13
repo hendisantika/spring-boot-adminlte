@@ -22,7 +22,7 @@
 			<div class="box-header with-border">
 				<h3 class="box-title">Lists</h3>
 				<div class="box-tools pull-right">
-					<a href="/customers/add" type="button" class="btn btn-box-tool"><i
+					<a th:href="@{'/outletsetup/edit/'+0}" type="button" class="btn btn-box-tool"><i
 						class="fa fa-plus"></i></a> <br clear="all" />
 				</div>
 			</div>
@@ -52,8 +52,8 @@
 							<td th:text="${outlet.isDeleted}">IS_DELETED</td>
 							<td th:text="${outlet.timeStamp}">TIME_STAMP</td>
 							<td th:text="${outlet.version}">VERSION</td>
-							<td><a th:href="@{/hha/edit}">Edit</a></td>
-							<td><a th:href="@{'/hha/delete/'+${outlet.id}}">Delete</a></td>
+							<td><a th:href="@{'/outletsetup/edit/'+${outlet.id}}">Edit</a></td>
+							<td><a th:href="@{'/outletsetup/delete/'+${outlet.id}}">Delete</a></td>
 						</tr>
 					</tbody>
 				</table>
