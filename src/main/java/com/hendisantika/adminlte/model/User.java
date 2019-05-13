@@ -1,6 +1,7 @@
 package com.hendisantika.adminlte.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,7 +18,9 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
+
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
@@ -58,19 +61,13 @@ public class User implements Serializable {
 
 	@Column(name = "email")
 	private String email;
+	
+	@Transient
+	private Long[] roleIds;
+	
 
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
 	private Set<UserRole> userRoles = new HashSet<>();
-
-	
-	
-	public Set<UserRole> getUserRoles() {
-		return userRoles;
-	}
-
-	public void setUserRoles(Set<UserRole> userRoles) {
-		this.userRoles = userRoles;
-	}
 
 	public User() {
 
@@ -84,6 +81,23 @@ public class User implements Serializable {
 		this.created = created;
 		this.email = email;
 	}
+	
+	public Long[] getRoleIds() {
+		return roleIds;
+	}
+
+	public void setRoleIds(Long[] roleIds) {
+		this.roleIds = roleIds;
+	}
+
+	public Set<UserRole> getUserRoles() {
+		return userRoles;
+	}
+
+	public void setUserRoles(Set<UserRole> userRoles) {
+		this.userRoles = userRoles;
+	}
+
 
 	@PrePersist
 	protected void onCreate() {
@@ -133,8 +147,11 @@ public class User implements Serializable {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", phoneNumber=" + phoneNumber
-				+ ", created=" + created + ", email=" + email + ", userRoles=" + userRoles + "]";
+				+ ", created=" + created + ", email=" + email + ", roleIds=" + Arrays.toString(roleIds) + ", userRoles="
+				+ userRoles + "]";
 	}
+
+	
 
 	
 	

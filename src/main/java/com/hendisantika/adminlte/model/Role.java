@@ -46,6 +46,11 @@ public class Role implements Serializable {
 
 	private String taskAccessFunctionalities;
 
+	
+
+	public Role() {
+
+	}
 	@OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
 	private Set<UserRole> userRoles = new HashSet<>();
 
@@ -58,9 +63,9 @@ public class Role implements Serializable {
 	public void setUserRoles(Set<UserRole> userRoles) {
 		this.userRoles = userRoles;
 	}
-
-	public Role() {
-
+	public Role(long id) {
+		super();
+		this.id = id;
 	}
 
 	public Role(long id, String roleName) {

@@ -39,6 +39,16 @@
                     <label for="email">E-mail</label>
                     <input type="email" required="true" class="form-control" th:field="*{email}" id="email" />
                 </div>
+                <div>
+						<label class="manage_label">Role List:</label>
+						<select
+							name="basic[]" multiple="multiple"
+							class=" 3col form-control active" id="roleSelect" size="6"
+							th:field="*{roleIds}" onchange="onRoleChanged()">
+							<option th:each="tmpRole : ${roleList}" th:value="${tmpRole.id}"
+								th:text="${tmpRole.roleName}"></option>
+						</select>
+				</div>
             </div>
             <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save</button>

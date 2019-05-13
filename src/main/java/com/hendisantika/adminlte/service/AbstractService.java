@@ -36,9 +36,10 @@ public abstract class AbstractService<T, Long extends Serializable> {
 		}
 	}
 
-	public void update(T entity, Long id) {
+	public T update(T entity, Long id) {
 		T getEntity = getRepository().findOne(id);
-		getRepository().save(entity);
+		 T obj = getRepository().saveAndFlush(entity);
+		 return obj;
 	}
 
-}
+} 
