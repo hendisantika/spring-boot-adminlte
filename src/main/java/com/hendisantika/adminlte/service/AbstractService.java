@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.io.Serializable;
 
+@SuppressWarnings("hiding")
 public abstract class AbstractService<T, Long extends Serializable> {
 
 	private static final int PAGE_SIZE = 5;

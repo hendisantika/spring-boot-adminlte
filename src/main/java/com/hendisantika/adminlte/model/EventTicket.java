@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
@@ -35,9 +36,18 @@ public class EventTicket implements Serializable{
 	private long id;
 	
 	@ManyToOne
+	@JoinColumn(name="ticket_type_id")
 	private TicketTypeSetUp ticketType;
 	private BigDecimal price;
 	private boolean isDeleted;
+	
+	
+	
+	@ManyToOne
+	@JoinColumn(name="event_id")
+	private Event event;
+	
+	
 	
 	@Embedded
 	private AbstractTimeStamp timeStamp = new AbstractTimeStamp();

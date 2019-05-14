@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
@@ -34,10 +35,22 @@ public class EventMember implements Serializable{
 	private long id;
 	
 	@ManyToOne
+	@JoinColumn(name="user_id")
 	private User user = new User();
 	
 	@ManyToOne
+	@JoinColumn(name="eventRole")
 	private EventRoleSetUp eventRole = new EventRoleSetUp();
+	
+	@ManyToOne
+	@JoinColumn(name="event_id")
+	private Event event;
+	
+	@ManyToOne
+	@JoinColumn(name="event_outlet_id")
+	private EventOutlet event_outlet;
+
+	
 	
 	@Embedded
 	private AbstractTimeStamp timeStamp = new AbstractTimeStamp();

@@ -98,6 +98,7 @@ public class UserRole implements Serializable {
 		return true;
 	}
 
+
 	@Override
 	public String toString() {
 		return "UserRole [id=" + id + ", user=" + user.getUsername() + ", role=" + role.getNamePrefix() + "_"

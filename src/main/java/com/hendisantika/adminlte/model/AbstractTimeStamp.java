@@ -10,7 +10,6 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Version;
 
 @Embeddable
 public class AbstractTimeStamp implements Serializable {
