@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 public abstract class AbstractService<T extends AbstractModel<Long>, Long extends Serializable> {
 
@@ -17,7 +18,7 @@ public abstract class AbstractService<T extends AbstractModel<Long>, Long extend
 
     public Page<T> getList(Integer pageNumber) {
         PageRequest pageRequest =
-                new PageRequest(pageNumber - 1, PAGE_SIZE, Sort.Direction.DESC, "id");
+                PageRequest.of(pageNumber - 1, PAGE_SIZE, Sort.Direction.DESC, "id");
 
         return getRepository().findAll(pageRequest);
     }
@@ -27,18 +28,20 @@ public abstract class AbstractService<T extends AbstractModel<Long>, Long extend
     }
 
     public T get(Long id) {
-        T entity = getRepository().findOne(id);
+        Optional<T> entityOpt = getRepository().findById(id);
+        T entity = entityOpt.get();
         return entity;
     }
 
     public void delete(Long id) {
         try {
-            getRepository().delete(id);
+            getRepository().deleteById(id);
         } catch (EmptyResultDataAccessException e) {}
     }
 
     public void update(T entity) {
-        T getEntity = getRepository().findOne(entity.getId());
+        Optional<T> getEntityOpt = getRepository().findById(entity.getId());
+        T getEntity = getEntityOpt.get();
         getRepository().save(entity);
     }
 
