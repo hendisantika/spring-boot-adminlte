@@ -1,4 +1,4 @@
-package com.hendisantika.adminlte;
+package com.hendisantika.adminlte.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

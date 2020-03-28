@@ -25,7 +25,7 @@
             <table class="table table-striped">
                 <tr>
                     <th>ID</th>
-                    <th>Nome</th>
+                    <th>Name</th>
                     <th>Email</th>
                     <th>Registration Date</th>
                     <th>Action</th>
@@ -44,11 +44,11 @@
         </div>
         <div class="box-footer clearfix">
             <ul class="pagination pagination-sm no-margin pull-right">
-                <li><a href="/customers/1">Primeira</a></li>
+                <li><a href="/customers/1">First</a></li>
                 <li th:each="p : ${#numbers.sequence(1, endIndex/beginIndex)}" th:class="${p == currentIndex} ? 'active' : ''">
                     <a th:href="${'/customers/' + p}" th:text="${p}"></a>
                 </li>
-                <li><a th:href="${'/customers/' + endIndex}">Última</a></li>
+                <li><a th:href="${'/customers/' + endIndex}">Last</a></li>
             </ul>
         </div>
     </div>

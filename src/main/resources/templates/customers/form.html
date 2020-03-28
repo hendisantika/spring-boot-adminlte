@@ -6,7 +6,7 @@
 </head>
 <body>
 <section layout:fragment="header">
-    <h1>Cadastro de Cliente</h1>
+    <h1>Customer registration</h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li class="active">Registration Client</li>
@@ -15,7 +15,7 @@
 <div layout:fragment="content">
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">Formulário</h3>
+            <h3 class="box-title">Form</h3>
             <div class="box-tools pull-right">
                 <a href="/customers" type="button" class="btn btn-box-tool"><i class="fa fa-list-ul"></i></a>
             </div>
@@ -25,11 +25,11 @@
                 <input type="hidden" th:field="*{id}"/>
 
                 <div class="form-group">
-                    <label for="Firstname">Nome</label>
+                    <label for="Firstname">Firstname</label>
                     <input type="text" required="true" class="form-control" th:field="*{firstname}" id="firstname" />
                 </div>
                 <div class="form-group">
-                    <label for="Lastname">Sobrenome</label>
+                    <label for="Lastname">Lastname</label>
                     <input type="text" required="true" class="form-control" th:field="*{lastname}" id="lastname" />
                 </div>
                 <div class="form-group">
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button class="btn btn-primary" type="submit">Save</button>
             </div>
         </form>
     </div>

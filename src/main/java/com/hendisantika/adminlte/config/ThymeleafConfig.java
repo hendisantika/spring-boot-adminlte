@@ -1,4 +1,4 @@
-package com.hendisantika.adminlte;
+package com.hendisantika.adminlte.config;
 
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.springframework.context.annotation.Bean;
