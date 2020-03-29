@@ -32,7 +32,7 @@ It is free to make changes and implementations and make the code more evolved.
 
 | #   | Username | Password |
 | --- |:--------:| --------:|
-| 1   | bruno    | 1234     |
+| 1   | sasuke    | 1234     |
 | 2   | naruto   | 1234     |
 
 ## Screenshot
@@ -45,7 +45,11 @@ Dashboard Page
 
 ![Dashboard Page](img/dashboard.png "Dashboard Page")
 
+Add Customer Page
+
+![Add Customer Page](img/add.png "Add Customer Page")
+
 List Page
 
-![List Page](img/list.png "List Page")
+![List Page](img/list2.png "List Page")
 
