@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
+@RequestMapping("customers")
 public class CustomerController {
 
     private CustomersService customerService;
@@ -21,12 +23,12 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @RequestMapping(value = "/customers")
+    @GetMapping
     public String index() {
         return "redirect:/customers/1";
     }
 
-    @RequestMapping(value = "/customers/{pageNumber}", method = RequestMethod.GET)
+    @GetMapping(value = "/{pageNumber}")
     public String list(@PathVariable Integer pageNumber, Model model) {
         Page<Customers> page = customerService.getList(pageNumber);
 
@@ -43,7 +45,7 @@ public class CustomerController {
 
     }
 
-    @RequestMapping("/customers/add")
+    @GetMapping("/add")
     public String add(Model model) {
 
         model.addAttribute("customer", new Customers());
@@ -51,7 +53,7 @@ public class CustomerController {
 
     }
 
-    @RequestMapping("/customers/edit/{id}")
+    @GetMapping("/edit/{id}")
     public String edit(@PathVariable Long id, Model model) {
 
         model.addAttribute("customer", customerService.get(id));
@@ -59,7 +61,7 @@ public class CustomerController {
 
     }
 
-    @RequestMapping(value = "/customers/save", method = RequestMethod.POST)
+    @PostMapping(value = "/save")
     public String save(Customers customer, final RedirectAttributes ra) {
 
         Customers save = customerService.save(customer);
@@ -68,7 +70,7 @@ public class CustomerController {
 
     }
 
-    @RequestMapping("/customers/delete/{id}")
+    @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {
 
         customerService.delete(id);
