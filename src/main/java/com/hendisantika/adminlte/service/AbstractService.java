@@ -18,7 +18,7 @@ public abstract class AbstractService<T extends AbstractModel<Long>, Long extend
 
     public Page<T> getList(Integer pageNumber) {
         PageRequest pageRequest =
-                PageRequest.of(pageNumber - 1, PAGE_SIZE, Sort.Direction.DESC, "id");
+                PageRequest.of(pageNumber - 1, PAGE_SIZE, Sort.Direction.ASC, "id");
 
         return getRepository().findAll(pageRequest);
     }
