@@ -66,6 +66,7 @@
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
+            <version>7.15.0</version><!-- support mysql5.7 -->
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
