@@ -37,7 +37,9 @@
                     <td th:text="${#dates.format(row.addedDate, 'dd/MM/yyyy')}"></td>
                     <td>
                         <a th:href="${'/customers/edit/' + row.id}">Edit</a> |
-                        <a th:href="${'/customers/delete/' + row.id}">Delete</a>
+                        <a th:href="${'/customers/delete/' + row.id}">Delete</a> |
+                        <a href="javascript:void(0);" data-toggle="modal" th:data-target="'#modal-alert-' + ${row.id}">Alert</a>
+                        <th:block th:replace="~{fragments/dialog :: dialog('modal-alert-' + ${row.id}, 'row ' + ${row.id}, 'Hello ' + ${row.firstname})}"></th:block>
                     </td>
                 </tr>
             </table>
