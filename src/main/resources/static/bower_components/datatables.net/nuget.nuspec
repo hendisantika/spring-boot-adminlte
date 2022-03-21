@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <version>1.11.5</version>
+        <id>datatables.net</id>
+        <description>This is jQuery DataTables</description>
+        <repository type="git" url="https://github.com/DataTables/Dist-DataTables.git"/>
+        <authors>SpryMedia Ltd</authors>
+        <projectUrl>http://datatables.net</projectUrl>
+        <license type="expression">MIT</license>
+        <tags> Datatables jQuery table</tags>
+        <dependencies>
+            <dependency id="jquery" version="1.7.0"/>
+        </dependencies>
+        <contentFiles>
+            <files include="**/*" buildAction="Content"/>
+        </contentFiles>
+    </metadata>
+    <files>
+        <file src="js/jquery.dataTables.js" target="content\Scripts"/>
+        <file src="js/jquery.dataTables.js" target="contentFiles\any\any\wwwroot\js"/>
+        <file src="js/jquery.dataTables.min.js" target="content\Scripts"/>
+        <file src="js/jquery.dataTables.min.js" target="contentFiles\any\any\wwwroot\js"/>
+        <file src="types/types.d.ts" target="content\Scripts"/>
+        <file src="types/types.d.ts" target="contentFiles\any\any\wwwroot\js"/>
+    </files>
+</package>
+
