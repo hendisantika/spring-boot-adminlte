@@ -1,25 +1,21 @@
 <!-- sidebar: style can be found in sidebar.less -->
 <section class="sidebar" th:fragment="sidebar">
-    <!-- sidebar menu: : style can be found in sidebar.less -->
-    <ul class="sidebar-menu">
-        <li class="active treeview">
-            <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            </a>
-        </li>
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu" data-widget="tree">
+        <!-- <li class="header"></li> -->
+        <li><a href="/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview">
-            <a href="#">
-                <i class="fa fa-folder"></i>
-                <span>Registration</span>
+            <a href="#"><i class="fa fa-folder"></i> <span>Registration</span>
+                <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
+              </span>
             </a>
-            <ul class="treeview-menu">
-                <li><a href="/customers/add"><i class="fa fa-circle-o"></i> Add Customers</a></li>
-            </ul>
             <ul class="treeview-menu">
                 <li><a href="/customers"><i class="fa fa-circle-o"></i> List Customers</a></li>
+                <li><a href="/customers/add"><i class="fa fa-circle-o"></i> Add Customers</a></li>
             </ul>
         </li>
     </ul>
+    <!-- /.sidebar-menu -->
 </section>
 <!-- /.sidebar -->
