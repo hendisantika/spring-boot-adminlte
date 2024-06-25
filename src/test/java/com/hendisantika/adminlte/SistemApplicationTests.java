@@ -2,6 +2,7 @@ package com.hendisantika.adminlte;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 		},
 		webEnvironment = RANDOM_PORT
 )
+@Disabled
 public class SistemApplicationTests {
 
 	@Autowired

@@ -16,8 +16,8 @@ spring:
     database-platform: MYSQL
   flyway:
     enabled: true
-    check-location: true
     locations: classpath:/db/migration
+    fail-on-missing-locations: true
   # Templates reloading during development
   thymeleaf:
     cache: false
@@ -39,11 +39,6 @@ spring:
     livereload:
       enabled: true
     add-properties: true
-  resources:
-    static-locations: file:src/main/resources/static/
-    #    static-locations: ${project.basedir}/src/main/resources/static/
-    cache:
-      period: 0
   servlet:
     multipart:
       max-file-size: 5MB
@@ -52,6 +47,11 @@ spring:
       location: ${java.io.tmpdir}
   session:
     store-type: none
+  web:
+    resources:
+      static-locations: file:src/main/resources/static/
+      cache:
+        period: 0
 
 #We can use the httpOnly and secure flags to secure our session cookie:
 #
